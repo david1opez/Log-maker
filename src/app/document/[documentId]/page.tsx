@@ -120,7 +120,7 @@ function LogMakerDragComponent({type}: {type: string}) {
     )
 }
 
-export const StrictModeDroppable = ({ children, ...props }: DroppableProps) => {
+const StrictModeDroppable = ({ children, ...props }: DroppableProps) => {
     const [enabled, setEnabled] = useState(false);
     useEffect(() => {
       const animation = requestAnimationFrame(() => setEnabled(true));
