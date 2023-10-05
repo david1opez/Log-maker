@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import styles from "../../../../styles/document.module.css";
 import { DragDropContext, Droppable, Draggable, DroppableProps } from "react-beautiful-dnd";
 
+
 function PagePreview({index}: {index: number}) {
     return (
         <div key={index} className={styles.pagePreviewContainer}>
