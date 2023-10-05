@@ -251,8 +251,10 @@ export default function Document({ params }: { params: { documentId: string } })
                                         <Draggable key={index} draggableId={`component-${index}`} index={index}>
                                             {(provided, snapshot) => {
                                                 if (snapshot.isDragging && provided.draggableProps.style) {
-                                                    provided.draggableProps.style.left = provided.draggableProps.style.offsetLeft;
-                                                    provided.draggableProps.style.top = provided.draggableProps.style.offsetTop;
+                                                    if(provided.draggableProps.style?.left && provided.draggableProps.style?.top && provided.draggableProps.style.offsetLeft && provided.draggableProps.style.offsetTop) {
+                                                        provided.draggableProps.style.left = provided.draggableProps.style.offsetLeft;
+                                                        provided.draggableProps.style.top = provided.draggableProps.style.offsetTop;
+                                                    }
                                                 }
 
                                                 return (
