@@ -10,7 +10,7 @@
     flex-direction: column;
     background-color: var(--white);
     width: 14vw;
-    min-width: 150px;
+    min-width: 170px;
     align-items: center;
     border-radius: 7px;
     padding: 0rem 1rem;
@@ -74,6 +74,7 @@
     font-size: 0.8rem;
     width: 1.1rem;
     font-weight: 500;
+    box-shadow: none;
 }
 
 .pagePreview {
@@ -87,6 +88,7 @@
     border-radius: 3px;
     justify-content: flex-end;
     align-items: flex-end;
+    opacity: 1 !important;
 }
 
 .pagePreviewDeleteButton {
@@ -107,7 +109,7 @@
     flex-direction: column;
     background-color: var(--white);
     width: 14vw;
-    min-width: 150px;
+    min-width: 170px;
     align-items: flex-start;
     border-radius: 7px;
     padding-top: 0.6rem;
@@ -219,8 +221,8 @@
 
 .page {
     background-color: var(--white);
-    width: 31.5vw;
-    height: 41.5vw
+    width: 63.8vh;
+    height: 85vh;
 }
 
 /* Components */
@@ -259,6 +261,7 @@
     padding: 0.5rem 0.7rem;
     cursor: grab;
     margin-bottom: 0.8rem;
+    background-color: var(--white);
 }
 
 .componentIcon {
