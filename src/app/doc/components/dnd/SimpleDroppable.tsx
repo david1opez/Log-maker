@@ -3,7 +3,7 @@
 import { useState, useEffect, ReactNode } from "react";
 import { Direction, DraggableChildrenFn, Droppable, DroppableId, DroppableMode, TypeId } from "react-beautiful-dnd";
 
-interface StrictModeDroppableProps {
+interface SimpleDroppableProps {
     children: ReactNode;
     className?: string | undefined;
     droppableId: DroppableId;
@@ -17,7 +17,7 @@ interface StrictModeDroppableProps {
     getContainerForClone?: (() => HTMLElement) | undefined;
 }
 
-export default function StrictModeDroppable ({ className, children, ...props }: StrictModeDroppableProps) {
+export default function SimpleDroppable ({ className, children, ...props }: SimpleDroppableProps) {
     const [enabled, setEnabled] = useState(false);
 
     useEffect(() => {
