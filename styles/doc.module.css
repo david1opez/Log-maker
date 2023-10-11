@@ -1,0 +1,373 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Pages Preview */
+.leftContainer {
+    width: 15%;
+}
+
+.pagesContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    width: 100%;
+    min-width: 170px;
+    align-items: center;
+    border-radius: 7px;
+    padding: 0rem 1rem;
+    padding-top: 1rem;
+    box-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.1);
+    margin-Bottom: 2vh;
+}
+
+.pagesTitle {
+    width: 100%;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-align: left;
+    margin-bottom: 0.5rem;
+    margin-left: 0.2rem;
+}
+
+.pagePreviewsScrollContainer {
+    overflow: auto;
+    height: 60vh;
+    padding-right: 1rem;
+}
+
+.pagePreviewsScrollContainer::-webkit-scrollbar {
+    display: none
+}
+
+/* Searchbar */
+.searchbarContainer {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--light-gray);
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+}
+
+.searchbarInput {
+    outline: none;
+    border: none;
+    background-color: var(--light-gray);
+    padding: 0.4rem 0.7rem;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.searchbarIcon {
+    margin: 0.4rem 0.7rem;
+    margin-left: 0;
+    cursor: pointer;
+}
+
+/* Page Previews */
+.pagePreviewContainer {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+    cursor: grab
+}
+
+.pagePreviewIndex {
+    font-size: 0.8rem;
+    width: 1.1rem;
+    font-weight: 500;
+    box-shadow: none;
+}
+
+.pagePreview {
+    display: flex;
+    background-color: var(--white);
+    width: 7.2vw;
+    min-width: 67px;
+    height: 9.6vw;
+    min-height: 90px;
+    box-shadow: 0.05rem 0.2rem 0.3rem rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    opacity: 1 !important;
+}
+
+.pagePreviewDeleteButton {
+    width: 1.6vw;
+    max-width: 0.9rem;
+    min-width: 0.7rem;
+    height: 1.6vw;
+    max-height: 0.9rem;
+    min-height: 0.7rem;
+    cursor: pointer;
+    margin: 0.5rem;
+}
+
+/* Add Page Button */
+
+.addPageButtonsContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    width: 100%;
+    min-width: 170px;
+    align-items: flex-start;
+    border-radius: 7px;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    box-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.1);
+    max-height: 135px;
+    overflow: auto;
+}
+
+.addPageButtonsContainer::-webkit-scrollbar {
+    display: none
+}
+
+.addPageButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding-bottom: 0.4rem;
+    padding-top: 0.4rem;
+    transition: background-color 0.45s;
+}
+
+.addPageButton:hover {
+    background-color: var(--gray);
+    transition: background-color 0.45s;
+}
+
+.addPageButtonIcon {
+    width: 1rem;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+.addPageButtonText {
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin: 0vw 1vw;
+    width: 60%;
+    cursor: pointer;
+}
+
+.addPageButtonThreeDots {
+    cursor: pointer;
+    margin-right: 1rem;
+    right: 20
+}
+
+.customAddPageButton {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    padding: 0.5rem;
+    box-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.1);
+    transition: background-color 0.45s;
+    cursor: pointer;
+    bottom: 7vh;
+    left: 16vw
+}
+
+.customAddPageButton:hover {
+    background-color: var(--gray);
+    transition: background-color 0.45s;
+}
+
+/* Page */
+
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.documentTitleContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+}
+
+.teamName {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--dark-gray)
+}
+
+.documentName {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-left: 0.3rem;
+    margin-right: 0.6rem;
+}
+
+.teamMembersAccordionButton {
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.teamMembersAccordionButton:hover {
+    transform: translateX(0.2rem);
+    transition: transform 0.3s;
+}
+
+.page {
+    background-color: var(--white);
+    width: 63.8vh;
+    height: 85vh;
+    padding: 5% 6%;
+}
+
+/* Components */
+
+.componentsAndActionButtonsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 15%;
+}
+
+.components {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    width: 100%;
+    min-width: 150px;
+    align-items: center;
+    border-radius: 7px;
+    padding: 0.5rem 1rem;
+    padding-top: 1rem;
+    box-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.1);
+    margin-Bottom: 2vh;
+}
+
+.componentsContainer {
+    width: 100%;
+}
+
+.componentContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 3px;
+    box-shadow: 0rem 0.1rem 0.3rem rgba(0, 0, 0, 0.15);
+    padding: 0.5rem 0.7rem;
+    cursor: grab;
+    margin-bottom: 0.8rem;
+    background-color: var(--white);
+}
+
+.componentIcon {
+    width: 1vw;
+    height: 1vw;
+    min-width: 10px;
+    min-height: 10px;
+    margin-right: 1vw;
+}
+
+.componentName {
+    font-size: 0.8rem;
+    font-weight: 500;
+    width: 55%;
+    min-width: 50px;
+}
+
+.componentDragIcon {
+    min-width: 15px;
+    min-height: 15px;
+}
+
+.componentThreeDots {
+    min-width: 15px;
+    min-height: 15px;
+    cursor: pointer;
+}
+
+/* Action Buttons */
+
+.actionButtonsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 14vw;
+    min-width: 150px;
+}
+
+.actionButtonContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--white);
+    box-shadow: 0rem 0.1rem 0.3rem rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    padding: 0.5rem 0.7rem;
+    margin-bottom: 1vh;
+    transition: background-color 0.45s;
+    cursor: pointer;
+}
+
+.actionButtonContainer:hover {
+    background-color: var(--gray);
+    transition: background-color 0.45s;
+}
+
+.actionButtonText {
+    display: flex;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.actionButtonIcon {
+    width: 1.4vw;
+    min-width: 15px;
+    height: 1.4vw;
+    min-height: 15px;
+    margin-right: 0.7vw;
+}
+
+.lastChangesSavedTitle {
+    font-size: 0.6rem;
+    font-weight: 400;
+    text-align: center;
+    margin: 0.2rem 0rem;
+    color: var(--dark-gray);
+}
+
+.lastChangesSaved {
+    font-size: 0.7rem;
+    font-weight: 400;
+    text-align: center;
+    color: var(--dark-gray);
+}
+
+/* COMPONENTS */
+.tagComponent {
+    font-size: 85%;
+    font-family: '__Poppins_d3e56f', '__Poppins_Fallback_d3e56f';
+    font-style: normal;
+    font-weight: 600;
+    border: none;
+    outline: none;
+}
+
+.titleComponent {
+    font-size: 110%;
+    font-family: '__Poppins_d3e56f', '__Poppins_Fallback_d3e56f';
+    font-style: normal;
+    font-weight: 600;
+    border: none;
+    outline: none;
+}
