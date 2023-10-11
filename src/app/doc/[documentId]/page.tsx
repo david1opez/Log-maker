@@ -1,30 +1,15 @@
 'use client'
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import styles from "../../../../styles/doc.module.css";
-import { DragDropContext, Droppable, Draggable, DroppableProps } from "react-beautiful-dnd";
+import { DragDropContext, Draggable } from "react-beautiful-dnd";
 
 // COMPONENTS
 import PagePreview from "../components/PagePreview";
 import Searchbar from "../components/Searchbar";
 import AddPageButton from "../components/AddPageButton";
 import DragComponent from "../components/DragComponent";
-
-const StrictModeDroppable = ({ children, ...props }: DroppableProps) => {
-    const [enabled, setEnabled] = useState(false);
-
-    useEffect(() => {
-      const animation = requestAnimationFrame(() => setEnabled(true));
-      return () => {
-        cancelAnimationFrame(animation);
-        setEnabled(false);
-      };
-    }, []);
-
-    if (!enabled) return null;
-
-    return <Droppable {...props}>{children}</Droppable>;
-};
+import StrictModeDroppable from "../components/dnd/StrictModeDroppable";
 
 export default function Document({ params }: { params: { documentId: string } }) {
     const onDragEnd = () => {};
@@ -75,42 +60,29 @@ export default function Document({ params }: { params: { documentId: string } })
                     <Searchbar/>
 
                     {/* Pages */}
-                    <StrictModeDroppable droppableId="pages-droppable" type="pages">
-                        {(provided, snapshot) => (
-                            <div
-                                ref={provided.innerRef}
-                                {...provided.droppableProps}
-                                className={styles.pagePreviewsScrollContainer}
-                            >
-                                {
-                                    [1,2,3,4,5,6].map((item, index) => (
-                                        <Draggable
-                                            key={index}
-                                            draggableId={`page-${index}`} 
-                                            index={index}
-                                        >
-                                            {(provided, snapshot) => {
-                                                if (snapshot.isDragging && provided.draggableProps.style) {
-                                                    provided.draggableProps.style.left = provided.draggableProps.style.offsetLeft;
-                                                    provided.draggableProps.style.top = provided.draggableProps.style.offsetTop;
-                                                }
+                    <StrictModeDroppable droppableId="pages-droppable" type="pages" className={styles.pagePreviewsScrollContainer}>
+                        {
+                            [1,2,3,4,5,6].map((item, index) => (
+                                <Draggable key={index} draggableId={`page-${index}`} index={index}>
+                                    {(provided, snapshot) => {
+                                        if (snapshot.isDragging && provided.draggableProps.style) {
+                                            provided.draggableProps.style.left = provided.draggableProps.style.offsetLeft;
+                                            provided.draggableProps.style.top = provided.draggableProps.style.offsetTop;
+                                        }
 
-                                                return (
-                                                    <div
-                                                        ref={provided.innerRef}
-                                                        {...provided.draggableProps}
-                                                        {...provided.dragHandleProps}
-                                                    >
-                                                        <PagePreview key={index} index={index}/>
-                                                    </div>
-                                                )
-                                            }}
-                                        </Draggable>
-                                    ))
-                                }
-                                {provided.placeholder}
-                            </div>
-                        )}
+                                        return (
+                                            <div
+                                                ref={provided.innerRef}
+                                                {...provided.draggableProps}
+                                                {...provided.dragHandleProps}
+                                            >
+                                                <PagePreview key={index} index={index}/>
+                                            </div>
+                                        )
+                                    }}
+                                </Draggable>
+                            ))
+                        }
                     </StrictModeDroppable>
                     <div >
                         
@@ -155,43 +127,34 @@ export default function Document({ params }: { params: { documentId: string } })
                         <path d="M3 3L8 8L3 13" stroke="black" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </div>
-                <StrictModeDroppable droppableId="components-droppable" type="components">
-                    {(provided, snapshot) => (
-                        <div
-                            ref={provided.innerRef}
-                            {...provided.droppableProps}
-                            className={styles.page}
-                        >
-                            {
-                                components.map((item, index) => (
-                                    <Draggable
-                                        key={index}
-                                        draggableId={`page-component-${index}`} 
-                                        index={index}
-                                        isDragDisabled={item.componentType === 'tag'}
-                                    >
-                                        {(provided, snapshot) => {
-                                            if (snapshot.isDragging && provided.draggableProps.style) {
-                                                provided.draggableProps.style.left = provided.draggableProps.style.offsetLeft;
-                                                provided.draggableProps.style.top = provided.draggableProps.style.offsetTop;
-                                            }
 
-                                            return (
-                                                <h1
-                                                    ref={provided.innerRef}
-                                                    {...provided.draggableProps}
-                                                    {...provided.dragHandleProps}
-                                                    className={styles.titleComponent}
-                                                >{item.content}</h1>
-                                            )
-                                                    
-                                        }}
-                                    </Draggable>
-                                ))
-                            }
-                            {provided.placeholder}
-                        </div>
-                    )}
+                <StrictModeDroppable droppableId="components-droppable" type="components" className={styles.page}>
+                    {
+                        components.map((item, index) => (
+                            <Draggable
+                                key={index}
+                                draggableId={`page-component-${index}`} 
+                                index={index}
+                            >
+                                {(provided, snapshot) => {
+                                    if (snapshot.isDragging && provided.draggableProps.style) {
+                                        provided.draggableProps.style.left = provided.draggableProps.style.offsetLeft;
+                                        provided.draggableProps.style.top = provided.draggableProps.style.offsetTop;
+                                    }
+
+                                    return (
+                                        <h1
+                                            ref={provided.innerRef}
+                                            {...provided.draggableProps}
+                                            {...provided.dragHandleProps}
+                                            className={styles.titleComponent}
+                                        >{item.content}</h1>
+                                    )
+                                            
+                                }}
+                            </Draggable>
+                        ))
+                    }
                 </StrictModeDroppable>
             </div>
 
@@ -205,40 +168,32 @@ export default function Document({ params }: { params: { documentId: string } })
                         droppableId="component-droppable"
                         type="components"
                         isDropDisabled={true}
+                        className={styles.componentsContainer}
                     >
-                        {(provided, snapshot) => (
-                            <div
-                                ref={provided.innerRef}
-                                {...provided.droppableProps}
-                                className={styles.componentsContainer}
-                            >
-                                {
-                                    ["Título","Subtítulo","Texto","Imágen","Código","Lista","Tabla"].map((item, index) => (
-                                        <Draggable key={index} draggableId={`component-${index}`} index={index}>
-                                            {(provided, snapshot) => {
-                                                if (snapshot.isDragging && provided.draggableProps.style) {
-                                                    if(provided.draggableProps.style?.left && provided.draggableProps.style?.top && provided.draggableProps.style.offsetLeft && provided.draggableProps.style.offsetTop) {
-                                                        provided.draggableProps.style.left = provided.draggableProps.style.offsetLeft;
-                                                        provided.draggableProps.style.top = provided.draggableProps.style.offsetTop;
-                                                    }
-                                                }
+                        {
+                            ["Título","Subtítulo","Texto","Imágen","Código","Lista","Tabla"].map((item, index) => (
+                                <Draggable key={index} draggableId={`component-${index}`} index={index}>
+                                    {(provided, snapshot) => {
+                                        if (snapshot.isDragging && provided.draggableProps.style) {
+                                            if(provided.draggableProps.style?.left && provided.draggableProps.style?.top && provided.draggableProps.style.offsetLeft && provided.draggableProps.style.offsetTop) {
+                                                provided.draggableProps.style.left = provided.draggableProps.style.offsetLeft;
+                                                provided.draggableProps.style.top = provided.draggableProps.style.offsetTop;
+                                            }
+                                        }
 
-                                                return (
-                                                    <div
-                                                        ref={provided.innerRef}
-                                                        {...provided.draggableProps}
-                                                        {...provided.dragHandleProps}
-                                                    >
-                                                        <DragComponent key={index} type={item}/>
-                                                    </div>
-                                                )
-                                            }}
-                                        </Draggable>
-                                    ))
-                                }
-                                {provided.placeholder}
-                            </div>
-                        )}
+                                        return (
+                                            <div
+                                                ref={provided.innerRef}
+                                                {...provided.draggableProps}
+                                                {...provided.dragHandleProps}
+                                            >
+                                                <DragComponent key={index} type={item}/>
+                                            </div>
+                                        )
+                                    }}
+                                </Draggable>
+                            ))
+                        }
                     </StrictModeDroppable>
                 </div>
 

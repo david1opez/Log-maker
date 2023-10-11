@@ -1,12 +1,11 @@
 'use client'
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, ReactNode } from "react";
 import { Direction, DraggableChildrenFn, Droppable, DroppableId, DroppableMode, TypeId } from "react-beautiful-dnd";
 
-import styles from "../../../../styles/doc.module.css";
-
 interface StrictModeDroppableProps {
-    children: React.ReactElement<HTMLElement>;
+    children: ReactNode;
+    className?: string | undefined;
     droppableId: DroppableId;
     type?: TypeId | undefined;
     mode?: DroppableMode | undefined;
@@ -18,7 +17,7 @@ interface StrictModeDroppableProps {
     getContainerForClone?: (() => HTMLElement) | undefined;
 }
 
-export const StrictModeDroppable = ({ children, ...props }: StrictModeDroppableProps) => {
+export default function StrictModeDroppable ({ className, children, ...props }: StrictModeDroppableProps) {
     const [enabled, setEnabled] = useState(false);
 
     useEffect(() => {
@@ -36,9 +35,10 @@ export const StrictModeDroppable = ({ children, ...props }: StrictModeDroppableP
             <div
                 ref={provided.innerRef}
                 {...provided.droppableProps}
-                className={styles.page}
+                className={className}
             >
                 {children}
+                {provided.placeholder}
             </div>
         )}
     </Droppable>;
