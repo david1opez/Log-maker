@@ -1,3 +1,5 @@
+import Icon from "./Icon";
+
 import styles from "../../../../styles/doc.module.css";
 
 export default function DragComponent({type}: {type: string}) {
@@ -17,35 +19,8 @@ export default function DragComponent({type}: {type: string}) {
 
             <h2 className={styles.componentName}>{type}</h2>
 
-            <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className={styles.componentDragIcon}
-            >
-                <path d="M12.2094 15.9153L9.99973 18.125L7.79004 15.9153" stroke="#A7A7A7" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M10 12.5V18.125" stroke="#A7A7A7" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M7.79004 4.08469L9.99973 1.875L12.2094 4.08469" stroke="#A7A7A7" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M10 7.5V1.875" stroke="#A7A7A7" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M4.08469 12.2097L1.875 9.99997L4.08469 7.79028" stroke="#A7A7A7" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M7.5 10H1.875" stroke="#A7A7A7" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M15.915 7.79028L18.1247 9.99997L15.915 12.2097" stroke="#A7A7A7" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M12.5 10H18.125" stroke="#A7A7A7" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className={styles.componentThreeDots}
-            >
-                <path d="M10 10.9375C10.5178 10.9375 10.9375 10.5178 10.9375 10C10.9375 9.48223 10.5178 9.0625 10 9.0625C9.48223 9.0625 9.0625 9.48223 9.0625 10C9.0625 10.5178 9.48223 10.9375 10 10.9375Z" fill="black"/>
-                <path d="M10 5.9375C10.5178 5.9375 10.9375 5.51777 10.9375 5C10.9375 4.48223 10.5178 4.0625 10 4.0625C9.48223 4.0625 9.0625 4.48223 9.0625 5C9.0625 5.51777 9.48223 5.9375 10 5.9375Z" fill="black"/>
-                <path d="M10 15.9375C10.5178 15.9375 10.9375 15.5178 10.9375 15C10.9375 14.4822 10.5178 14.0625 10 14.0625C9.48223 14.0625 9.0625 14.4822 9.0625 15C9.0625 15.5178 9.48223 15.9375 10 15.9375Z" fill="black"/>
-            </svg>
+            <Icon name="move" className={styles.componentDragIcon}/>
+            <Icon name="threeDots" className={styles.componentThreeDots}/>
         </div>
     )
 }

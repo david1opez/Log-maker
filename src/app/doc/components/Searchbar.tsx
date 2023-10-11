@@ -1,19 +1,11 @@
 import styles from "../../../../styles/doc.module.css";
+import Icon from "./Icon";
 
 export default function Searchbar() {
     return (
         <div className={styles.searchbarContainer}>
             <input className={styles.searchbarInput}/>
-            <svg
-                width="17"
-                height="18"
-                viewBox="0 0 17 18"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className={styles.searchbarIcon}
-            >
-                <path d="M1.3848 5.39119C2.5733 2.53733 5.35801 0.675113 8.44945 0.666855C11.7813 0.64931 14.7439 2.78346 15.7825 5.94933C16.8211 9.1152 15.6984 12.5896 13.0037 14.5491C10.3089 16.5086 6.65771 16.5057 3.96612 14.5419L1.56612 16.9419C1.3221 17.1856 0.926798 17.1856 0.682783 16.9419C0.439072 16.6978 0.439072 16.3025 0.682783 16.0585L3.00778 13.7335C0.836036 11.5334 0.196297 8.24505 1.3848 5.39119ZM2.49909 10.8076C3.49699 13.2124 5.8459 14.7786 8.44945 14.7752V14.7419C11.983 14.7374 14.8516 11.8837 14.8744 8.35019C14.8778 5.74664 13.3116 3.39773 10.9069 2.39983C8.50217 1.40194 5.73306 1.95182 3.89207 3.79281C2.05108 5.6338 1.5012 8.40291 2.49909 10.8076Z" fill="#A7A7A7" stroke="#A7A7A7" stroke-width="0.3"/>
-            </svg>
+            <Icon name="search" className={styles.searchbarIcon}/>
         </div>
     )
 }
