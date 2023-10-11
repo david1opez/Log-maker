@@ -1,5 +1,6 @@
-import styles from "../../../../styles/doc.module.css";
 import Icon from "./Icon";
+
+import styles from "./styles/Searchbar.module.css";
 
 export default function Searchbar() {
     return (

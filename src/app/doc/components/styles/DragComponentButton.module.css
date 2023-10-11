@@ -1,0 +1,38 @@
+.componentContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 3px;
+    box-shadow: 0rem 0.1rem 0.3rem rgba(0, 0, 0, 0.15);
+    padding: 0.5rem 0.7rem;
+    cursor: grab;
+    margin-bottom: 0.8rem;
+    background-color: var(--white);
+}
+
+.componentIcon {
+    width: 1vw;
+    height: 1vw;
+    min-width: 10px;
+    min-height: 10px;
+    margin-right: 1vw;
+}
+
+.componentName {
+    font-size: 0.8rem;
+    font-weight: 500;
+    width: 55%;
+    min-width: 50px;
+}
+
+.componentDragIcon {
+    min-width: 15px;
+    min-height: 15px;
+}
+
+.componentThreeDots {
+    min-width: 15px;
+    min-height: 15px;
+    cursor: pointer;
+}

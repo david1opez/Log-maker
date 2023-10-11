@@ -1,0 +1,30 @@
+.addPageButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding-bottom: 0.4rem;
+    padding-top: 0.4rem;
+    transition: background-color 0.45s;
+}
+
+.addPageButtonIcon {
+    width: 1rem;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+.addPageButtonText {
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin: 0vw 1vw;
+    width: 60%;
+    cursor: pointer;
+}
+
+.addPageButtonThreeDots {
+    cursor: pointer;
+    margin-right: 1rem;
+    right: 20
+}

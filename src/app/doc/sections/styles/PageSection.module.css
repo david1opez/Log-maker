@@ -1,0 +1,52 @@
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.documentTitleContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+}
+
+.teamName {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--dark-gray)
+}
+
+.documentName {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-left: 0.3rem;
+    margin-right: 0.6rem;
+}
+
+.teamMembersAccordionButton {
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.teamMembersAccordionButton:hover {
+    transform: translateX(0.2rem);
+    transition: transform 0.3s;
+}
+
+.page {
+    background-color: var(--white);
+    width: 63.8vh;
+    height: 85vh;
+    padding: 5% 6%;
+}
+
+.titleComponent {
+    font-size: 110%;
+    font-family: '__Poppins_d3e56f', '__Poppins_Fallback_d3e56f';
+    font-style: normal;
+    font-weight: 600;
+    border: none;
+    outline: none;
+}

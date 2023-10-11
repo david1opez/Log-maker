@@ -1,6 +1,6 @@
 import Icon from "./Icon"
 
-import styles from "../../../../styles/doc.module.css";
+import styles from "./styles/AddPageButton.module.css";
 
 export default function AddPageButton({text}: {text: string}) {
     return (

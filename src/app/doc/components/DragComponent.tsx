@@ -1,6 +1,6 @@
 import Icon from "./Icon";
 
-import styles from "../../../../styles/doc.module.css";
+import styles from "./styles/DragComponentButton.module.css";
 
 export default function DragComponent({type}: {type: string}) {
     return (

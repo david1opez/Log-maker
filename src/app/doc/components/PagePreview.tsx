@@ -1,6 +1,6 @@
 import Icon from "./Icon";
 
-import styles from "../../../../styles/doc.module.css";
+import styles from "./styles/PagePreview.module.css";
 
 export default function PagePreview({index}: {index: number}) {
     return (

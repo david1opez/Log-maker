@@ -1,0 +1,22 @@
+.searchbarContainer {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--light-gray);
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+}
+
+.searchbarInput {
+    outline: none;
+    border: none;
+    background-color: var(--light-gray);
+    padding: 0.4rem 0.7rem;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.searchbarIcon {
+    margin: 0.4rem 0.7rem;
+    margin-left: 0;
+    cursor: pointer;
+}

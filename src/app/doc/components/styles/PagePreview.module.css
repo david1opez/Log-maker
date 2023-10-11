@@ -1,0 +1,38 @@
+.pagePreviewContainer {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+    cursor: grab
+}
+
+.pagePreviewIndex {
+    font-size: 0.8rem;
+    width: 1.1rem;
+    font-weight: 500;
+    box-shadow: none;
+}
+
+.pagePreview {
+    display: flex;
+    background-color: var(--white);
+    width: 7.2vw;
+    min-width: 67px;
+    height: 9.6vw;
+    min-height: 90px;
+    box-shadow: 0.05rem 0.2rem 0.3rem rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    opacity: 1 !important;
+}
+
+.pagePreviewDeleteButton {
+    width: 1.6vw;
+    max-width: 0.9rem;
+    min-width: 0.7rem;
+    height: 1.6vw;
+    max-height: 0.9rem;
+    min-height: 0.7rem;
+    cursor: pointer;
+    margin: 0.5rem;
+}
